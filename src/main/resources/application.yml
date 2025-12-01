@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: Stripe-Integration-API
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.stripe.integration: DEBUG
+  file:
+    name: logs/stripe.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Stripe keys
+stripe:
+  api:
+    key: ${STRIPE_API_KEY}
+  webhook:
+    secret: ${STRIPE_WEBHOOK_SECRET}
